@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Form from './useReducer2/Form'
+import RootLayout from './layout/RootLayout';
+import Home from './component/Home';
+import Products from './component/Products';
+import Carrer from './component/Carrer';
+import About from './component/About';
+import Login from './component/Login';
+import CreatePost from './component/CreatePost';
+import EditPost from './component/EditPost';
+// import LearnRedux from './LearnRedux';
+// import LoginContextProvider from './context/LoginContextProvider';
 
 function App() {
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path='/' element={<RootLayout />}>
+        <Route index element={<Home />}/>
+        <Route path='/products' element={<Products />}/>
+        <Route path='/carrer' element={<Carrer />}/>
+        <Route path='/about' element={<About />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/editPost/:id' element={<EditPost />}/>
+        <Route path='/create-post' element={<CreatePost />}/>
+    </Route>
+  ))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <RouterProvider router={router}></RouterProvider>
+  // <div>
+  //   {/* <LoginContextProvider>
+  //     <ParentEle/>
+  //   </LoginContextProvider> */}
+  //   {/* <LearnRedux /> */}
+  //   {/* <Form /> */}
+  // </div>
   );
 }
 

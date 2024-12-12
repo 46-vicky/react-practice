@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+    width: 100vw;
+    height: 100vh;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 350px;
+    padding:10px;
+    background: #fff;
+    border-radius: 10px;
+}
+.formField{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    max-width:325px;
+    margin:0px auto;
+}
+.container label{
+    display: block;
+    padding: 5px;
+}
+.container input{
+    border: 1px solid #1f1f1f;
+    outline: none;
+    width: 100%;
+    margin:unset;
+    max-width:unset;
+}
